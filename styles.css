@@ -1,0 +1,37 @@
+/* Basic page centering */
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure the body takes up the full screen height */
+    margin: 0;
+    background-color: #1a1a2e; /* Dark background like the video */
+}
+
+/* 1. Define the size and shape of the ring */
+.rotating-ring {
+    width: 200px; /* Width and height must be equal for a perfect circle */
+    height: 200px;
+    
+    /* 2. Create the circle shape */
+    border-radius: 50%; 
+    
+    /* 3. Create the ring effect (a thick border) */
+    border: 15px solid; 
+    
+    /* 4. Use different colors for an abstract, moving effect */
+    border-top-color: #00bcd4;    /* Light Blue */
+    border-right-color: #ff3e67;  /* Pink/Red */
+    border-bottom-color: #00bcd4; /* Light Blue */
+    border-left-color: #4CAF50;   /* Green (could be a transparent color too) */
+}
+
+/* Define the rotation movement (0 to 360 degrees) */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Start: No rotation */
+    }
+    100% {
+        transform: rotate(360deg); /* End: One full rotation */
+    }
+}
