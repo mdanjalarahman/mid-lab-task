@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Information Boxes</title>
+
+    <style>
+        .product-box {
+            display: inline-block;            
+            width: 250px;
+            background: #ffffff;
+            padding: 15px;                   
+            margin: 15px;                    
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            text-align: center;               
+            transition: 0.3s;
+        }
+
+      
+        .product-box:hover {
+            outline: 3px solid #2563eb;     
+            outline-offset: 5px;
+        }
+
+      
+        .product-img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+      
+        .buy-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .buy-btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">Our Products</h2>
+
+ 
+    <div class="product-box">
+        <img src="https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-slim-3-15amn8-arctic-grey/ideapad-slim-3-15amn8-arctic-grey-01-228x228.webp" class="product-img" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>High performance laptop for work and gaming.</p>
+        <p><b>Price: $899</b></p>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+  
+    <div class="product-box">
+        <img src="https://kzbangladesh.com/wp-content/uploads/2023/08/kz-castor.jpg" class="product-img" alt="Headphones">
+        <h3>Headphones</h3>
+        <p>Noise-cancelling headphones with deep bass.</p>
+        <p><b>Price: $199</b></p>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+   
+    <div class="product-box">
+        <img src="https://i5.walmartimages.com/seo/Smart-Watch-Fits-for-Android-and-iPhone-EEEkit-Fitness-Health-Tracker-Waterproof-Smartwatch-for-Women-Men_819cb65b-8437-4eb3-aba1-ce6513dc8d58.312f5775b50ab18c130fe5a454149fa9.jpeg" class="product-img" alt="Smartwatch">
+        <h3>Smartwatch</h3>
+        <p>Track fitness, heart rate, and receive notifications.</p>
+        <p><b>Price: $149</b></p>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+</body>
+</html>

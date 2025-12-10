@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow Handling Demo</title>
+
+    <style>
+        .box {
+            width: 300px;       
+            height: 200px;     
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 20px;
+            background: #f5f5f5;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+
+        #visibleBox {
+            overflow: visible; 
+        }
+
+       
+        #hiddenBox {
+            overflow: hidden; 
+        }
+
+        
+        #scrollBox {
+            overflow: scroll; 
+        }
+
+      
+        #autoBox {
+            overflow: auto; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Overflow Handling Demonstration</h2>
+
+    
+    <div class="box" id="visibleBox">
+        <h3>overflow: visible</h3>
+        This is a sample paragraph used to demonstrate how the overflow property works in CSS. 
+        The text inside this box is longer than the box itself, so you can see how the content 
+        behaves when it does not fit inside the fixed-size area. Depending on the overflow setting, 
+        the extra text may appear outside the box.
+    </div>
+
+   
+    <div class="box" id="hiddenBox">
+        <h3>overflow: hidden</h3>
+        This paragraph is intentionally long so that it does not fit inside the container. 
+        When overflow is set to “hidden,” the extra text is simply clipped and cannot be seen 
+        unless you change the CSS property. This helps show how hidden overflow works.
+    </div>
+
+   
+    <div class="box" id="scrollBox">
+        <h3>overflow: scroll</h3>
+        This text explains how scroll overflow works. Because the content is longer than the box, 
+        scrollbars will appear even if you do not need them. This lets you read the extra text by 
+        scrolling within the box, showing a clear example of scroll behavior.
+    </div>
+
+   
+    <div class="box" id="autoBox">
+        <h3>overflow: auto</h3>
+        In this box, the overflow property is set to “auto.” This means scrollbars will appear only 
+        when they are needed. If the content fits inside the box, no scrollbar is shown. If the 
+        content overflows, a scrollbar appears automatically to allow scrolling.

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Card</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+      
+        .card {
+            width: 280px;
+            background: white;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2563eb;
+        }
+
+      
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #22c55e;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+      
+        .name {
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .bio {
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+      
+        <div class="badge">Online</div>
+
+      
+        <img src="https://i.pravatar.cc/150" class="profile-img" alt="User Photo">
+
+        <h2 class="name">MD ANJALA RAHMAN</h2>
+        <p class="bio">
+            A passionate web developer who loves UI/UX design, coding,
+            and building creative web applications for fun and learning.
+        </p>
+    </div>
+
+</body>
+</html>

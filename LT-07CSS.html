@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Header Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+      
+        header {
+            position: sticky; 
+            top: 0;
+            background: #2563eb;
+            color: white;
+            padding: 15px;
+            border-bottom: 3px solid #1e3a8a;
+            z-index: 1000; 
+
+       
+        nav a {
+            color: #fffe;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+      
+        .content {
+            padding: 20px;
+            margin-top: 20px; 
+        }
+
+       
+        .paragraph {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Tech Blog</h2>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">Reviews</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+   
+    <div class="content">
+        <h3>Welcome to the Tech Blog!</h3>
+
+        <div class="paragraph">
+            This is a sample article used to demonstrate how a sticky header works. 
+            As you scroll down the page, the header will remain at the top so that 
+            navigation is always available.
+        </div>
+
+        <div class="paragraph">
+            Sticky headers are commonly used in blogs and websites to improve user experience. 
+            They allow visitors to easily access menu options without scrolling all the way back up.
+        </div>
+
+        <div class="paragraph">
+            This paragraph adds more content for scrolling. When a page contains a lot of text, 
+            a sticky header helps users explore the site faster and with less effort.
+        </div>
+
+        <div class="paragraph">
+            You can use position: sticky and top: 0 in CSS to create this effect. 
+            It is simpler than using JavaScript and works smoothly on modern browsers.
+        </div>
+
+        <div class="paragraph">
+            Here is another example paragraph to extend the page length. 
+            Notice how the header remains fixed while the rest of the content moves.
+        </div>
+
+        <div class="paragraph">
+            This technique is especially useful for news sites, blogs, and dashboards 
+            where users navigate between multiple sections frequently.
+        </div>
+
+        <div class="paragraph">
+            Thank you for viewing this demonstration. Now you understand how sticky 
+            headers keep navigation easily accessible while scrolling.
+        </div>
+    </div>
+
+</body>
+</html>
