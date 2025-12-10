@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 90%;
+            height: 120px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #resultBox {
+            margin-top: 20px;
+            padding: 15px;
+            width: 90%;
+            border-radius: 8px;
+            background: #f3f4f6;
+            border: 1px solid #ccc;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Text Analyzer</h2>
+
+    <textarea id="userText" placeholder="Type or paste text here..."></textarea>
+    <br>
+    <button onclick="analyze()">Analyze Text</button>
+
+    <div id="resultBox"></div>
+
+    <script>
+        function analyze() {
+            const text = document.getElementById("userText").value;
+
+          
+            if (text.trim() === "") {
+                alert("Please enter some text before analyzing.");
+                return;
+            }
+
+        
+            const characterCount = text.length;
+
+          
+            const words = text.trim().split(/\s+/);
+            const wordCount = text.trim() === "" ? 0 : words.length;
+
+          
+            const reversed = text.split("").reverse().join("");
+
+          
+            document.getElementById("resultBox").innerHTML = `
+                <div class="title">Character Count:</div> ${characterCount}
+                <div class="title">Word Count:</div> ${wordCount}
+                <div class="title">Reversed Text:</div> 
+                <div style="margin-top:5px; padding:10px; background:white; border-radius:5px; border:1px solid #ddd;">
+                    ${reversed}
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>

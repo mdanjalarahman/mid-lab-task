@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Form Field Display</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .field {
+            margin-top: 10px;
+            display: none;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 250px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Smart Registration Form</h2>
+
+    <label>Select User Type:</label><br>
+    <select id="userType" onchange="showFields()">
+        <option value="">-- Select --</option>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+  
+    <div id="rollField" class="field">
+        <label>Roll Number:</label><br>
+        <input type="text" placeholder="Enter Roll Number">
+    </div>
+
+  
+    <div id="deptField" class="field">
+        <label>Department:</label><br>
+        <input type="text" placeholder="Enter Department">
+    </div>
+
+    <script>
+        function showFields() {
+            const type = document.getElementById("userType").value;
+
+            const rollField = document.getElementById("rollField");
+            const deptField = document.getElementById("deptField");
+
+            if (type === "student") {
+                rollField.style.display = "block";
+                deptField.style.display = "none";
+            } 
+            else if (type === "teacher") {
+                rollField.style.display = "none";
+                deptField.style.display = "block";
+            } 
+            else {
+                rollField.style.display = "none";
+                deptField.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

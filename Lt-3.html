@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark / Light Mode Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 18px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">My Portfolio</header>
+
+    <div class="content" id="content">
+        <p>Welcome to my portfolio! </p>
+        <button id="toggleBtn" onclick="toggleTheme()">Switch to Dark Mode</button>
+    </div>
+
+    <footer id="footer">All right Reserved @anjala rahman</footer>
+
+    <script>
+        
+        let isDark = false;
+
+        function toggleTheme() {
+            const body = document.body;
+            const header = document.getElementById("header");
+            const content = document.getElementById("content");
+            const footer = document.getElementById("footer");
+            const toggleBtn = document.getElementById("toggleBtn");
+
+            if (isDark === false) {
+               
+                body.style.background = "#1e1e1e";
+                body.style.color = "white";
+
+                header.style.background = "#333";
+                footer.style.background = "#333";
+
+                content.style.background = "#2d2d2d";
+                content.style.border = "1px solid #444";
+
+                toggleBtn.innerText = "Switch to Light Mode";
+
+                isDark = true;
+            } else {
+                
+                body.style.background = "white";
+                body.style.color = "black";
+
+                header.style.background = "#e5e5e5";
+                footer.style.background = "#e5e5e5";
+
+                content.style.background = "white";
+                content.style.border = "none";
+
+                toggleBtn.innerText = "Switch to Dark Mode";
+
+                isDark = false;
+            }
+        }
+    </script>
+
+</body>
+</html>

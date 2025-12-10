@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Result Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 6px 0 2px;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 200px;
+      padding: 4px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 6px 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #eee;
+    }
+    .error {
+      color: red;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Result Entry</h2>
+
+  <form id="resultForm">
+    <label for="name">Student Name</label>
+    <input type="text" id="name" required />
+
+    <label for="sub1">Subject 1 Marks</label>
+    <input type="number" id="sub1" min="0" max="100" required />
+
+    <label for="sub2">Subject 2 Marks</label>
+    <input type="number" id="sub2" min="0" max="100" required />
+
+    <label for="sub3">Subject 3 Marks</label>
+    <input type="number" id="sub3" min="0" max="100" required />
+
+    <br><br>
+    <button type="submit">Add Result</button>
+    <button type="reset">Reset</button>
+
+    <div id="error" class="error"></div>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Subject 1</th>
+        <th>Subject 2</th>
+        <th>Subject 3</th>
+        <th>Total</th>
+        <th>Average</th>
+        <th>Grade</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody">
+      <!-- New rows will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById("resultForm");
+    const errorDiv = document.getElementById("error");
+    const tbody = document.getElementById("resultBody");
+
+    function getGradeAndRemarks(avg) {
+      let grade, remarks;
+
+      if (avg >= 80) {
+        grade = "A";
+        remarks = "Excellent";
+      } else if (avg >= 60) {
+        grade = "B";
+        remarks = "Good";
+      } else if (avg >= 40) {
+        grade = "C";
+        remarks = "Pass";
+      } else {
+        grade = "F";
+        remarks = "Fail";
+      }
+
+      return { grade, remarks };
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop normal form submission
+      errorDiv.textContent = "";
+
+      const name = document.getElementById("name").value.trim();
+      const s1 = Number(document.getElementById("sub1").value);
+      const s2 = Number(document.getElementById("sub2").value);
+      const s3 = Number(document.getElementById("sub3").value);
+
+      // Basic validation
+      if (!name) {
+        errorDiv.textContent = "Name is required.";
+        return;
+      }
+
+      const marks = [s1, s2, s3];
+      for (let m of marks) {
+        if (isNaN(m)) {
+          errorDiv.textContent = "All marks must be numbers.";
+          return;
+        }
+        if (m < 0 || m > 100) {
+          errorDiv.textContent = "Marks must be between 0 and 100.";
+          return;
+        }
+      }
+
+      const total = s1 + s2 + s3;
+      const avg = total / 3;
+      const { grade, remarks } = getGradeAndRemarks(avg);
+
+      // Create row
+      const tr = document.createElement("tr");
+
+      const cells = [
+        name,
+        s1,
+        s2,
+        s3,
+        total,
+        avg.toFixed(2),
+        grade,
+        remarks
+      ];
+
+      cells.forEach((value) => {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
+      });
+
+      tbody.appendChild(tr);
+      form.reset();
+    });
+  </script>
+</body>
+</html>

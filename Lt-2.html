@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+
+        #slider {
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 0 10px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Travel Destination Slider</h2>
+
+    <img id="slider" src="" alt="slider image">
+
+    <div class="buttons">
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+       
+        const images = [
+            "https://picsum.photos/id/1018/600/400",
+            "https://picsum.photos/id/1025/600/400",
+            "https://picsum.photos/id/1036/600/400",
+            "https://picsum.photos/id/1043/600/400"
+        ];
+
+        let index = 0;
+
+        const slider = document.getElementById("slider");
+
+       
+        slider.src = images[index];
+
+      
+        function nextImage() {
+            index++;
+            if (index >= images.length) {
+                index = 0; 
+            }
+            slider.src = images[index];
+        }
+
+       
+        function prevImage() {
+            index--;
+            if (index < 0) {
+                index = images.length - 1;
+            }
+            slider.src = images[index];
+        }
+
+        setInterval(nextImage, 3000);
+    </script>
+
+</body>
+</html>
